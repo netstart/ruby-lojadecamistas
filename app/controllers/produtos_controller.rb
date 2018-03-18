@@ -16,4 +16,8 @@ class ProdutosController < ApplicationController
     Produto.destroy id
     redirect_to produtos_path
   end
+
+  def busca
+
+  end
 end

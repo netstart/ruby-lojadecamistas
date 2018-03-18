@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # get "/produtos" => "produtos#index" #default não precisaria definir esta rota
 
   resources :produtos, only: [:new, :create, :destroy, :index]
+  get "produtos/busca" => "produtos#busca", as: :busca_produto
 
   root "produtos#index"
 end
