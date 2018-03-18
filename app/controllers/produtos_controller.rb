@@ -5,7 +5,7 @@ class ProdutosController < ApplicationController
 
   def create
     #usar simbolo economiza memoria por não gerar a string em memória
-    valores = params.require(:produto).permit!
+    valores = params.require(:produto).permit :nome, :preco, :descricao, :quantidade
 
     produto = Produto.create valores
   end
