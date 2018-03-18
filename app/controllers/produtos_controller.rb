@@ -1,6 +1,6 @@
 class ProdutosController < ApplicationController
   def index
-    @produtos = Produto.order(:preco).limit 2
+    @produtos = Produto.order(:preco).limit 10
   end
 
   def create
@@ -8,12 +8,12 @@ class ProdutosController < ApplicationController
     valores = params.require(:produto).permit :nome, :preco, :descricao, :quantidade
 
     Produto.create valores
-    redirect_to produtos_url
+    redirect_to produtos_path
   end
 
   def destroy
     id = params[:id]
     Produto.destroy id
-    redirect_to produtos_url
+    redirect_to produtos_path
   end
 end
