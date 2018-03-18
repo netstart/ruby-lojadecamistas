@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get "/produtos/new" => "produtos#new"
 
-  get "/produtos/:id/remove" => "produtos#destroy"
+  delete "/produtos/:id" => "produtos#destroy" , as: :produto
 
   get "/produtos" => "produtos#index" #default não precisaria definir esta rota
 

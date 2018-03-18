@@ -7,10 +7,13 @@ class ProdutosController < ApplicationController
     #usar simbolo economiza memoria por não gerar a string em memória
     valores = params.require(:produto).permit :nome, :preco, :descricao, :quantidade
 
-    produto = Produto.create valores
+    Produto.create valores
+    redirect_to produtos_url
   end
 
   def destroy
+    id = params[:id]
+    Produto.destroy id
     redirect_to produtos_url
   end
 end
