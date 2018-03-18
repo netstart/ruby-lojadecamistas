@@ -9,4 +9,8 @@ class ProdutosController < ApplicationController
 
     produto = Produto.create valores
   end
+
+  def destroy
+    redirect_to produtos_url
+  end
 end
