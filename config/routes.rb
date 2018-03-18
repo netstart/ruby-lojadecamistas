@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # delete "/produtos/:id" => "produtos#destroy" , as: :produto
   # get "/produtos" => "produtos#index" #default não precisaria definir esta rota
 
-  resources :produtos
+  resources :produtos, only: [:new, :create, :destroy, :index]
 
   root "produtos#index"
 end
